@@ -3,93 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quick Compare — Compare Air Conditioning, Gas Heating &amp; Solar Deals</title>
-<meta name="description" content="Quick Compare helps you find the best air conditioning, gas heating and solar solutions. Compare options and get a free quote from Australia's trusted experts.">
+<title>Quick Compare — Compare Energy, Gas &amp; Internet Plans in Australia</title>
+<meta name="description" content="Quick Compare helps Australians compare electricity, gas and internet plans, or bundle all three in one place. Free to compare, no obligation to switch.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <style>
   :root{
-    --purple:#5C2D87;
-    --purple-dark:#472069;
-    --purple-deep:#33174F;
-    --teal-dark:#00877D;         /* accessible teal, logo accent only */
-    --green:#1E7A46;             /* check icons, 5.4:1 on white */
-    --lavender:#EFEAF6;
-    --ink:#26212B;
-    --muted:#5C5663;
-    --border:#E8E4EF;
-    --bg-soft:#F8F6FB;
-    --footer:#211C29;
+    /* Palette sampled from econnex.com.au */
+    --navy:#003459;             /* primary: buttons, headings */
+    --navy-dark:#00263F;        /* primary hover */
+    --navy-deep:#00171F;        /* deepest surface */
+    --blue:#007EA7;             /* links & icons, 4.6:1 on white */
+    --blue-bright:#00A8E8;      /* accent fills, icon details, borders */
+    --amber:#FDA212;            /* accent badge, navy text on top (6.3:1) */
+    --sky:#E3F1FA;
+    --ink:#0F2634;
+    --muted:#4F6675;
+    --border:#D7E5EF;
+    --bg-soft:#F2F8FC;
+    --footer:#00263F;
 
     --ease-out:cubic-bezier(0.23, 1, 0.32, 1);
-    --shadow-sm:0 1px 2px rgba(24,16,36,.05);
-    --shadow-md:0 6px 16px -8px rgba(24,16,36,.14);
-    --shadow-lg:0 20px 40px -24px rgba(24,16,36,.22);
+    --shadow-sm:0 1px 2px rgba(0,52,89,.06);
+    --shadow-md:0 6px 16px -8px rgba(0,52,89,.16);
+    --shadow-lg:0 20px 40px -24px rgba(0,52,89,.24);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   @media (prefers-reduced-motion: no-preference){
     html{scroll-behavior:smooth}
   }
   body{font-family:'Outfit',sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:16px}
-  /* type scale: 12 / 16 / 20 / 32 (+fluid clamps for display sizes) */
+  /* type scale: 12 / 16 / 20 / 32 (+fluid clamp on the h1) */
   img{max-width:100%}
   a{text-decoration:none;color:inherit}
   .container{max-width:1140px;margin:0 auto;padding:0 24px}
   h1,h2,h3{text-wrap:balance;letter-spacing:-0.015em}
   section{padding:88px 0;scroll-margin-top:72px}
-  :focus-visible{outline:2px solid var(--purple);outline-offset:2px;border-radius:4px}
+  :focus-visible{outline:2px solid var(--navy);outline-offset:2px;border-radius:4px}
 
   /* ============ HEADER ============ */
   header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
   .logo{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink)}
-  .logo .mark{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9px;background:var(--purple)}
+  .logo .mark{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:9px;background:var(--navy)}
   .logo .mark svg{width:16px;height:16px;stroke:#fff}
-  .logo em{font-style:normal;color:var(--teal-dark)}
-  .nav-links{display:flex;gap:28px;font-size:16px;font-weight:500;color:#4B4553}
+  .logo em{font-style:normal;color:var(--blue)}
+  .nav-links{display:flex;gap:26px;font-size:16px;font-weight:500;color:#3D5567}
   .nav-links a{transition:color .15s ease}
-  .nav-links a:hover{color:var(--purple)}
+  .nav-links a:hover{color:var(--navy)}
 
   /* ============ BUTTONS ============ */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 24px;border-radius:10px;font-weight:600;font-size:16px;white-space:nowrap;cursor:pointer;border:none;font-family:inherit;
        transition:background-color .15s ease,border-color .15s ease,color .15s ease,transform .16s var(--ease-out)}
   .btn:active{transform:scale(.98)}
-  .btn-primary{background:var(--purple);color:#fff}
-  .btn-primary:hover{background:var(--purple-dark)}
-  .btn-ghost{background:#fff;color:var(--ink);border:1px solid #D6D0E0}
-  .btn-ghost:hover{border-color:var(--purple);color:var(--purple)}
-  .btn-white{background:#fff;color:var(--purple)}
-  .btn-white:hover{background:var(--lavender)}
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:var(--navy-dark)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid #C3D6E3}
+  .btn-ghost:hover{border-color:var(--navy);color:var(--navy)}
+  .btn-white{background:#fff;color:var(--navy)}
+  .btn-white:hover{background:var(--sky)}
   .btn-outline-light{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
   .btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08)}
   .btn-sm{padding:8px 18px}
 
   /* ============ HERO ============ */
-  .hero{background:radial-gradient(1100px 560px at 88% 12%, var(--lavender) 0%, rgba(239,234,246,0) 62%), #FAF9FC;border-bottom:1px solid var(--border)}
+  .hero{background:radial-gradient(1100px 560px at 88% 12%, var(--sky) 0%, rgba(227,241,250,0) 62%), #F7FBFD;border-bottom:1px solid var(--border)}
   .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;padding:84px 0 92px}
   .hero h1{font-size:clamp(2.3rem, 4.6vw, 3.3rem);line-height:1.08;font-weight:700;letter-spacing:-0.025em;margin-bottom:18px}
   .hero p.sub{color:var(--muted);font-size:16px;max-width:52ch;margin-bottom:30px}
   .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
   .hero-trust{display:flex;gap:22px;flex-wrap:wrap}
-  .trust-item{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:500;color:#4B4553}
-  .trust-item svg{width:16px;height:16px;stroke:var(--green);flex-shrink:0}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:500;color:#3D5567}
+  .trust-item svg{width:16px;height:16px;stroke:var(--blue);flex-shrink:0}
 
   /* hero comparison panel */
   .panel{background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden}
   .panel-head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--border)}
   .panel-head b{font-size:16px;font-weight:600}
-  .pill{font-size:12px;font-weight:600;color:var(--purple);background:var(--lavender);padding:4px 10px;border-radius:99px}
+  .pill{font-size:12px;font-weight:600;color:var(--navy);background:var(--sky);padding:4px 10px;border-radius:99px}
+  .pill-amber{background:var(--amber);color:var(--navy)}
   .panel-row{display:flex;align-items:center;gap:14px;padding:16px 22px;border-bottom:1px solid var(--border);transition:background-color .15s ease}
-  .panel-row:hover{background:#FBFAFD}
+  .panel-row:hover{background:#F7FBFD}
   .panel-row .p-icon{width:40px;height:40px;border-radius:10px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .panel-row .p-icon svg{width:22px;height:22px}
+  .panel-row .p-icon svg{width:21px;height:21px}
   .panel-row .p-text{flex-grow:1;line-height:1.35}
   .panel-row .p-text b{display:block;font-size:16px;font-weight:600}
   .panel-row .p-text span{font-size:12px;color:var(--muted)}
-  .panel-row .p-arrow{color:var(--purple);font-weight:600;font-size:12px;display:inline-flex;align-items:center;gap:4px}
-  .panel-row .p-arrow svg{width:14px;height:14px;stroke:var(--purple);transition:transform .2s var(--ease-out)}
+  .panel-row .p-arrow{color:var(--navy);font-weight:600;font-size:12px;display:inline-flex;align-items:center;gap:4px}
+  .panel-row .p-arrow svg{width:14px;height:14px;stroke:var(--navy);transition:transform .2s var(--ease-out)}
   .panel-row:hover .p-arrow svg{transform:translateX(3px)}
   .panel-foot{padding:18px 22px}
   .panel-foot .btn{width:100%}
@@ -101,31 +104,33 @@
   .section-head p{color:var(--muted);font-size:16px}
   .section-head p b{color:var(--ink);font-weight:600}
 
-  /* ============ SERVICES (bento) ============ */
+  /* ============ SERVICE CARDS (bento) ============ */
   .bento{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:auto auto;gap:20px}
   .b-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:32px;display:flex;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow-sm);
           transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out),border-color .25s var(--ease-out)}
-  .b-card.feature{grid-row:span 2;background:linear-gradient(180deg,#FBFAFD 0%,#fff 55%);padding:40px;justify-content:flex-start}
-  .b-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .b-card.feature{grid-row:span 2;background:linear-gradient(180deg,#F7FBFD 0%,#fff 55%);padding:40px}
+  .b-head{display:flex;align-items:center;gap:14px;margin-bottom:14px;width:100%}
   .b-head svg{width:36px;height:36px;flex-shrink:0}
   .b-card.feature .b-head svg{width:44px;height:44px}
   .b-card h3{font-size:20px;font-weight:600}
+  .b-head .pill{margin-left:auto}
   .b-card p{font-size:16px;color:var(--muted);margin-bottom:18px;max-width:44ch}
   .b-card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+  .b-card .tag{font-size:12px;font-weight:500;color:#3D5567;background:var(--bg-soft);border:1px solid var(--border);padding:4px 12px;border-radius:99px}
   .b-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
-  .b-list div{display:flex;align-items:center;gap:10px;font-size:16px;color:#4B4553}
-  .b-list svg{width:16px;height:16px;stroke:var(--green);flex-shrink:0}
-  .b-card .tag{font-size:12px;font-weight:500;color:#4B4553;background:var(--bg-soft);border:1px solid var(--border);padding:4px 12px;border-radius:99px}
-  .b-card a.more{margin-top:auto;font-size:16px;font-weight:600;color:var(--purple);display:inline-flex;align-items:center;gap:6px}
-  .b-card a.more svg{width:15px;height:15px;stroke:var(--purple);transition:transform .2s var(--ease-out)}
+  .b-list div{display:flex;align-items:center;gap:10px;font-size:16px;color:#3D5567}
+  .b-list svg{width:16px;height:16px;stroke:var(--blue);flex-shrink:0}
+  .b-links{display:flex;flex-direction:column;gap:10px;margin-top:auto;width:100%}
+  .b-card a.more{font-size:16px;font-weight:600;color:var(--navy);display:inline-flex;align-items:center;gap:6px}
+  .b-card a.more svg{width:15px;height:15px;stroke:var(--navy);transition:transform .2s var(--ease-out)}
   .b-card a.more:hover svg{transform:translateX(3px)}
 
   /* ============ HOW IT WORKS ============ */
   .how{background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative}
-  .steps::before{content:'';position:absolute;top:24px;left:8%;right:8%;height:1px;background:#DCD6E6}
+  .steps::before{content:'';position:absolute;top:24px;left:8%;right:8%;height:1px;background:#C3D9E8}
   .step{position:relative}
-  .step .num{position:relative;z-index:1;width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid var(--purple);color:var(--purple);font-weight:600;font-size:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .step .num{position:relative;z-index:1;width:48px;height:48px;border-radius:50%;background:#fff;border:1.5px solid var(--navy);color:var(--navy);font-weight:600;font-size:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
   .step h3{font-size:20px;font-weight:600;margin-bottom:6px}
   .step p{font-size:16px;color:var(--muted);max-width:34ch}
 
@@ -134,59 +139,58 @@
   .why h2{font-size:32px;font-weight:700;margin-bottom:10px}
   .why p.lead{color:var(--muted);font-size:16px;margin-bottom:30px;max-width:46ch}
   .why-item{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-  .why-item .dot{width:38px;height:38px;border-radius:10px;background:var(--lavender);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .why-item .dot svg{width:18px;height:18px;stroke:var(--green)}
+  .why-item .dot{width:38px;height:38px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .why-item .dot svg{width:18px;height:18px;stroke:var(--blue)}
   .why-item span{font-size:16px;font-weight:500}
-  .why-visual{background:var(--purple-dark);border-radius:16px;padding:44px 40px;color:#fff;box-shadow:var(--shadow-lg)}
+  .why-visual{background:var(--navy);border-radius:16px;padding:44px 40px;color:#fff;box-shadow:var(--shadow-lg)}
   .why-visual h3{font-size:20px;font-weight:600;margin-bottom:10px}
-  .why-visual p{font-size:16px;color:#DCD3E8;margin-bottom:28px}
+  .why-visual p{font-size:16px;color:#C6DEEC;margin-bottom:28px}
   .why-visual .stat-row{display:flex;gap:32px;margin-bottom:30px}
-  .why-visual .stat b{display:block;font-size:32px;font-weight:700;letter-spacing:-0.02em}
-  .why-visual .stat span{font-size:12px;color:#C9BEDB}
+  .why-visual .stat b{display:block;font-size:32px;font-weight:700;letter-spacing:-0.02em;color:var(--blue-bright)}
+  .why-visual .stat span{font-size:12px;color:#A9C6D8}
 
-  /* ============ BRANDS ============ */
-  .brand-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .brand-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow-sm);
-              transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
-  .brand-name{font-size:20px;font-weight:700;margin-bottom:10px;letter-spacing:-0.01em}
-  .brand-card p{font-size:16px;color:var(--muted);flex-grow:1;margin-bottom:16px}
-  .brand-card a{font-size:16px;font-weight:600;color:var(--purple);display:inline-flex;align-items:center;gap:5px}
-  .brand-card a svg{width:14px;height:14px;stroke:var(--purple);transition:transform .2s var(--ease-out)}
-  .brand-card a:hover svg{transform:translateX(3px)}
-  .brands-cta{margin-top:36px}
+  /* ============ WHAT YOU CAN COMPARE ============ */
+  .cat-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .cat-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow-sm);
+            transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out)}
+  .cat-card svg.cat-icon{width:32px;height:32px;margin-bottom:16px}
+  .cat-card h3{font-size:20px;font-weight:600;margin-bottom:8px}
+  .cat-card p{font-size:16px;color:var(--muted);flex-grow:1;margin-bottom:16px}
+  .cat-card a{font-size:16px;font-weight:600;color:var(--navy);display:inline-flex;align-items:center;gap:5px}
+  .cat-card a svg{width:14px;height:14px;stroke:var(--navy);transition:transform .2s var(--ease-out)}
+  .cat-card a:hover svg{transform:translateX(3px)}
+  .cats-cta{margin-top:36px}
 
-  /* card hovers only on pointer devices */
   @media (hover: hover) and (pointer: fine){
-    .b-card:hover,.brand-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#DCD4E8}
+    .b-card:hover,.cat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#BFD9EA}
   }
 
   /* ============ CTA BAND ============ */
-  .cta-band{background:var(--purple);color:#fff;padding:72px 0}
+  .cta-band{background:var(--navy);color:#fff;padding:72px 0}
   .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
   .cta-band h2{font-size:32px;font-weight:700;max-width:24ch}
   .cta-band .btns{display:flex;gap:12px;flex-wrap:wrap}
 
-  /* ============ TESTIMONIAL ============ */
-  .testi{background:var(--bg-soft)}
-  .testi-inner{max-width:720px}
-  .quote-mark svg{width:36px;height:36px;fill:var(--purple);margin-bottom:20px}
-  .quote-body{font-size:clamp(1.15rem, 2vw, 1.35rem);line-height:1.55;font-weight:500;color:var(--ink);margin-bottom:24px;letter-spacing:-0.01em}
-  .quote-author{display:flex;align-items:center;gap:12px}
-  .quote-author .avatar{width:40px;height:40px;border-radius:50%;background:var(--purple);color:#fff;font-weight:600;font-size:16px;display:flex;align-items:center;justify-content:center}
-  .quote-author b{display:block;font-size:16px;font-weight:600}
-  .quote-author span{font-size:12px;color:var(--muted)}
+  /* ============ COVERAGE ============ */
+  .coverage{background:var(--bg-soft)}
+  .cov-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .cov-list{display:flex;flex-direction:column;gap:16px}
+  .cov-row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+  .cov-row svg{width:18px;height:18px;stroke:var(--blue);flex-shrink:0;margin-top:3px}
+  .cov-row b{display:block;font-size:16px;font-weight:600;margin-bottom:2px}
+  .cov-row span{font-size:12px;color:var(--muted)}
 
   /* ============ FOOTER ============ */
-  footer{background:var(--footer);color:#A9A2B4;padding:64px 0 0;font-size:16px}
+  footer{background:var(--footer);color:#A9C6D8;padding:64px 0 0;font-size:16px}
   .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
   .foot-grid h3{color:#fff;font-size:16px;font-weight:600;margin-bottom:16px}
-  .foot-grid a{display:block;margin-bottom:9px;color:#A9A2B4;transition:color .15s ease}
+  .foot-grid a{display:block;margin-bottom:9px;color:#A9C6D8;transition:color .15s ease}
   .foot-grid a:hover{color:#fff}
   .foot-brandline{display:inline-flex;align-items:center;gap:9px;color:#fff;font-weight:700;font-size:20px;margin-bottom:14px}
-  .foot-brandline .mark{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;background:var(--purple)}
-  .foot-brandline .mark svg{width:13px;height:13px;stroke:#fff}
-  .disclaimer{background:#1A1620;padding:22px 0;font-size:12px;color:#948DA1;line-height:1.7}
-  .foot-legal{border-top:1px solid #35303F;padding:18px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:#948DA1}
+  .foot-brandline .mark{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;background:var(--blue-bright)}
+  .foot-brandline .mark svg{width:13px;height:13px;stroke:var(--navy)}
+  .disclaimer{background:var(--navy-deep);padding:22px 0;font-size:12px;color:#8FB2C7;line-height:1.7}
+  .foot-legal{border-top:1px solid #0B4A6E;padding:18px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:#8FB2C7}
   .foot-legal a:hover{color:#fff}
 
   /* ============ SCROLL REVEAL ============ */
@@ -194,7 +198,7 @@
   .js .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){
     .js .reveal{opacity:1;transform:none;transition:none}
-    .btn,.b-card,.brand-card,.p-arrow svg,.more svg{transition:none}
+    .btn,.b-card,.cat-card,.p-arrow svg,.more svg{transition:none}
   }
 
   /* ============ RESPONSIVE ============ */
@@ -205,14 +209,14 @@
     .b-card.feature{grid-row:auto}
     .steps{grid-template-columns:1fr;gap:32px}
     .steps::before{display:none}
-    .why-wrap{grid-template-columns:1fr;gap:44px}
-    .brand-cards{grid-template-columns:repeat(2,1fr)}
+    .why-wrap,.cov-grid{grid-template-columns:1fr;gap:44px}
+    .cat-cards{grid-template-columns:repeat(2,1fr)}
     .foot-grid{grid-template-columns:1fr 1fr}
     .nav-links{display:none}
     .cta-inner{flex-direction:column;align-items:flex-start}
   }
   @media(max-width:560px){
-    .brand-cards{grid-template-columns:1fr}
+    .cat-cards{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr}
     .nav .btn-sm{padding:8px 14px;font-size:12px}
     .hero-ctas .btn{width:100%}
@@ -229,14 +233,15 @@
       Quick<em>Compare</em>
     </a>
     <nav class="nav-links">
-      <a href="#services">Air Conditioning</a>
-      <a href="#services">Gas Heating</a>
-      <a href="#services">Solar</a>
+      <a href="#services">Energy</a>
+      <a href="#services">Gas</a>
+      <a href="#services">Internet</a>
+      <a href="#services">Bundle</a>
       <a href="#how">How It Works</a>
       <a href="#why">Why Us</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary btn-sm js-out" href="https://www.climat.com.au/contact-us/?utm_source=quickcompare&amp;utm_medium=referral">Get a Free Quote</a>
+      <a class="btn btn-primary btn-sm js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Compare now</a>
     </div>
   </div>
 </header>
@@ -245,16 +250,16 @@
 <div class="hero" id="top">
   <div class="container hero-grid">
     <div class="hero-copy">
-      <h1>Find the right system. Compare and save.</h1>
-      <p class="sub">Quick Compare matches you with Australia's leading experts in air conditioning, gas heating and solar, so you get proven quality you can rely on at the right price.</p>
+      <h1>Compare energy, gas and internet. Switch in minutes.</h1>
+      <p class="sub">Quick Compare helps Australian households check what they are paying for electricity, gas and internet, compare plans side by side, and bundle them together if that works out cheaper.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary js-out" href="https://www.climat.com.au/contact-us/?utm_source=quickcompare&amp;utm_medium=referral">Get a free quote</a>
-        <a class="btn btn-ghost" href="#services">Compare services</a>
+        <a class="btn btn-primary js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Compare energy plans</a>
+        <a class="btn btn-ghost" href="#services">See all services</a>
       </div>
       <div class="hero-trust">
         <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>100% free to compare</div>
-        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>Trusted installers only</div>
-        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>40+ years' experience</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>No obligation to switch</div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>Compare in a few minutes</div>
       </div>
     </div>
     <div class="panel" aria-label="Compare services">
@@ -262,24 +267,24 @@
         <b>Start your comparison</b>
         <span class="pill">Free</span>
       </div>
-      <a class="panel-row js-out" href="https://www.climat.com.au/air-conditioning/?utm_source=quickcompare&amp;utm_medium=referral">
-        <span class="p-icon"><svg viewBox="0 0 64 64" fill="none"><rect x="8" y="16" width="48" height="20" rx="4" stroke="#5C2D87" stroke-width="4"/><line x1="14" y1="30" x2="50" y2="30" stroke="#5C2D87" stroke-width="4"/><path d="M18 42c0 4-3 5-3 8M32 42c0 4-3 5-3 8M46 42c0 4-3 5-3 8" stroke="#00877D" stroke-width="4" stroke-linecap="round"/></svg></span>
-        <span class="p-text"><b>Air conditioning</b><span>Ducted reverse cycle &amp; splits</span></span>
+      <a class="panel-row js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">
+        <span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg></span>
+        <span class="p-text"><b>Energy</b><span>Electricity &amp; gas plans</span></span>
         <span class="p-arrow">Compare <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="panel-row js-out" href="https://www.climat.com.au/heating/?utm_source=quickcompare&amp;utm_medium=referral">
-        <span class="p-icon"><svg viewBox="0 0 64 64" fill="none"><path d="M32 8c6 8 14 13 14 26a14 14 0 1 1-28 0c0-7 4-10 6-16 3 4 5 6 8 7-1-6-2-11 0-17z" stroke="#5C2D87" stroke-width="4" stroke-linejoin="round"/></svg></span>
-        <span class="p-text"><b>Gas heating</b><span>Ducted, space heaters &amp; log fires</span></span>
+      <a class="panel-row js-out" href="https://www.econnex.com.au/internet?utm_source=quickcompare&amp;utm_medium=referral">
+        <span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5 12a10.5 10.5 0 0 1 14 0"/><path d="M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1.2" fill="#00A8E8" stroke="none"/></svg></span>
+        <span class="p-text"><b>Internet</b><span>NBN, 4G &amp; 5G plans</span></span>
         <span class="p-arrow">Compare <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="panel-row js-out" href="https://www.climat.com.au/solar/?utm_source=quickcompare&amp;utm_medium=referral">
-        <span class="p-icon"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="11" stroke="#5C2D87" stroke-width="4"/><path d="M32 8v7M32 49v7M56 32h-7M15 32H8M49 15l-5 5M20 44l-5 5M49 49l-5-5M20 20l-5-5" stroke="#00877D" stroke-width="4" stroke-linecap="round"/></svg></span>
-        <span class="p-text"><b>Solar</b><span>Quality panels &amp; inverters</span></span>
+      <a class="panel-row js-out" href="https://www.econnex.com.au/bundle?utm_source=quickcompare&amp;utm_medium=referral">
+        <span class="p-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" stroke="#00A8E8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" stroke="#00A8E8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg></span>
+        <span class="p-text"><b>Bundle</b><span>Combine and manage together</span></span>
         <span class="p-arrow">Compare <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
       <div class="panel-foot">
-        <a class="btn btn-primary js-out" href="https://www.climat.com.au/contact-us/?utm_source=quickcompare&amp;utm_medium=referral">Get a free quote</a>
-        <small>No obligation. Takes under a minute.</small>
+        <a class="btn btn-primary js-out" href="https://www.econnex.com.au/bundle?utm_source=quickcompare&amp;utm_medium=referral">Compare and save</a>
+        <small>Free to use. No obligation to switch.</small>
       </div>
     </div>
   </div>
@@ -289,44 +294,59 @@
 <section id="services">
   <div class="container">
     <div class="section-head reveal">
-      <h2>Proven quality you can rely on.</h2>
-      <p>We compare Australia's leading brands and connect you with one of the country's biggest <b>Daikin</b> dealers, the market-leading brand for technology, efficiency and reliability.</p>
+      <h2>Compare what your household actually pays for.</h2>
+      <p>Start with one service or bring them together. Every comparison is free, and you only switch if a plan genuinely suits you better.</p>
     </div>
     <div class="bento">
+
+      <!-- CARD 1: ENERGY -->
       <div class="b-card feature reveal">
         <div class="b-head">
-          <svg viewBox="0 0 64 64" fill="none"><rect x="8" y="16" width="48" height="20" rx="4" stroke="#5C2D87" stroke-width="3"/><line x1="14" y1="30" x2="50" y2="30" stroke="#5C2D87" stroke-width="3"/><path d="M18 42c0 4-3 5-3 8M32 42c0 4-3 5-3 8M46 42c0 4-3 5-3 8" stroke="#00877D" stroke-width="3" stroke-linecap="round"/></svg>
-          <h3>Air Conditioning</h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg>
+          <h3>Energy</h3>
         </div>
-        <p>Stay cool with efficient air conditioning. Compare systems from leading brands, sized and matched to your home by experienced installers.</p>
+        <p>Compare electricity and gas plans for your address, and see what you would pay against what you pay now. Rates, discounts and daily supply charges side by side.</p>
         <div class="tags">
-          <span class="tag">Ducted reverse cycle</span>
-          <span class="tag">Split systems</span>
-          <span class="tag">Multi-head</span>
+          <span class="tag">Electricity</span>
+          <span class="tag">Gas</span>
+          <span class="tag">Solar feed-in</span>
         </div>
         <div class="b-list">
-          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>Systems sized to your home's floor plan</div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>Installed by licensed, experienced technicians</div>
-          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>Daikin, Mitsubishi Electric and Hisense ranges</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>Plans matched to your postcode and usage</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>Compare rates, discounts and supply charges</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>Switch online without calling your retailer</div>
         </div>
-        <a class="more js-out" href="https://www.climat.com.au/air-conditioning/?utm_source=quickcompare&amp;utm_medium=referral">Explore air conditioning <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="b-links">
+          <a class="more js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Compare energy plans <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
+
+      <!-- CARD 2: GAS & INTERNET -->
       <div class="b-card reveal" style="--d:.06s">
         <div class="b-head">
-          <svg viewBox="0 0 64 64" fill="none"><path d="M32 8c6 8 14 13 14 26a14 14 0 1 1-28 0c0-7 4-10 6-16 3 4 5 6 8 7-1-6-2-11 0-17z" stroke="#5C2D87" stroke-width="3" stroke-linejoin="round"/><path d="M32 34c3 3 5 5 5 9a5 5 0 1 1-10 0c0-4 2-6 5-9z" fill="#00877D"/></svg>
-          <h3>Gas Heating</h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.2 3 5 4.8 5 9a5 5 0 0 1-10 0c0-2.6 1.5-3.9 2.4-6 1 1.6 1.9 2.4 3 2.8-.4-2.3-.7-4 -.4-5.8z"/><path d="M12 13.5c1 1 1.7 1.7 1.7 3a1.7 1.7 0 0 1-3.4 0c0-1.3.7-2 1.7-3z" fill="#00A8E8" stroke="none"/></svg>
+          <h3>Gas &amp; Internet</h3>
         </div>
-        <p>Warm up with efficient gas heating, from ducted systems to gas space heaters and log fires.</p>
-        <a class="more js-out" href="https://www.climat.com.au/heating/?utm_source=quickcompare&amp;utm_medium=referral">Explore gas heating <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p>Sort the two bills people forget to check. Gas sits alongside electricity in the energy comparison, and internet covers NBN, 4G and 5G plans by speed tier.</p>
+        <div class="b-links">
+          <a class="more js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Compare gas plans <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="more js-out" href="https://www.econnex.com.au/internet?utm_source=quickcompare&amp;utm_medium=referral">Compare internet plans <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
+
+      <!-- CARD 3: BUNDLE -->
       <div class="b-card reveal" style="--d:.12s">
         <div class="b-head">
-          <svg viewBox="0 0 64 64" fill="none"><rect x="10" y="26" width="32" height="22" rx="2" transform="skewX(-8)" stroke="#5C2D87" stroke-width="3"/><line x1="22" y1="26" x2="19" y2="48" stroke="#5C2D87" stroke-width="2.5"/><line x1="34" y1="26" x2="31" y2="48" stroke="#5C2D87" stroke-width="2.5"/><circle cx="48" cy="14" r="6" stroke="#00877D" stroke-width="3"/><path d="M48 3v4M48 21v4M59 14h-4M41 14h-4M56 6l-3 3M43 19l-3 3M56 22l-3-3M43 9l-3-3" stroke="#00877D" stroke-width="2.5" stroke-linecap="round"/></svg>
-          <h3>Solar</h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5" stroke="#00A8E8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5" stroke="#00A8E8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>
+          <h3>Bundle</h3>
+          <span class="pill pill-amber">All three</span>
         </div>
-        <p>Power up with solar energy and cut your bills with quality panels and inverters.</p>
-        <a class="more js-out" href="https://www.climat.com.au/solar/?utm_source=quickcompare&amp;utm_medium=referral">Explore solar <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p>Put electricity, gas and internet through one comparison, then manage them together instead of chasing three separate bills and three renewal dates.</p>
+        <div class="b-links">
+          <a class="more js-out" href="https://www.econnex.com.au/bundle?utm_source=quickcompare&amp;utm_medium=referral">Compare bundles <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -336,23 +356,23 @@
   <div class="container">
     <div class="section-head reveal">
       <h2>How Quick Compare works</h2>
-      <p>Comparing is simple, fast and completely free. Three easy steps to the right system for your home.</p>
+      <p>Comparing is simple, fast and completely free. Three steps from your current bill to a plan that suits your household.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="num">1</div>
-        <h3>Choose your service</h3>
-        <p>Tell us what you're after: air conditioning, gas heating or solar for your home.</p>
+        <h3>Compare</h3>
+        <p>Enter your address and pick the services you want to check: electricity, gas, internet, or all three.</p>
       </div>
       <div class="step reveal" style="--d:.08s">
         <div class="num">2</div>
-        <h3>Compare your options</h3>
-        <p>We match you with trusted, market-leading brands and systems suited to your home and budget.</p>
+        <h3>Switch</h3>
+        <p>See available plans side by side and choose the one that fits your usage and budget. Sign up online.</p>
       </div>
       <div class="step reveal" style="--d:.16s">
         <div class="num">3</div>
-        <h3>Get your free quote</h3>
-        <p>Connect directly with expert installers and receive a free, no-obligation quote.</p>
+        <h3>Save</h3>
+        <p>Your new provider handles the changeover. No need to contact your old retailer yourself.</p>
       </div>
     </div>
   </div>
@@ -363,56 +383,60 @@
   <div class="container why-wrap">
     <div class="why reveal">
       <h2>Why Quick Compare?</h2>
-      <p class="lead">We connect you with Australia's leading experts in solar, gas heating and air conditioning solutions.</p>
-      <div class="why-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></div><span>Expert, professional advice</span></div>
-      <div class="why-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></div><span>Expert installation with quality components</span></div>
-      <div class="why-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></div><span>Full after sales service</span></div>
-      <div class="why-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></div><span>Only quality, trusted brands</span></div>
+      <p class="lead">Most households stay on the same plan for years without checking whether it is still competitive. Comparing takes minutes.</p>
+      <div class="why-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></div><span>Free to compare, with no obligation to switch</span></div>
+      <div class="why-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></div><span>Plans matched to your address and usage</span></div>
+      <div class="why-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></div><span>One place for electricity, gas and internet</span></div>
+      <div class="why-item"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></div><span>Switch online without phone calls or paperwork</span></div>
     </div>
     <div class="why-visual reveal" style="--d:.08s">
-      <h3>Matched with proven experts</h3>
-      <p>There's a lot to consider when choosing the right system for your home and lifestyle. That's why we partner with one of Australia's longest-established suppliers of home heating, cooling and solar energy systems.</p>
+      <h3>One comparison, up to four services</h3>
+      <p>Rather than comparing electricity this month and internet next year, check them together and bundle the ones that make sense for your household.</p>
       <div class="stat-row">
-        <div class="stat"><b>40+</b><span>Years' experience</span></div>
-        <div class="stat"><b>3</b><span>Services compared</span></div>
+        <div class="stat"><b>4</b><span>Services you can bundle</span></div>
+        <div class="stat"><b>3</b><span>Steps to switch</span></div>
         <div class="stat"><b>100%</b><span>Free to use</span></div>
       </div>
-      <a class="btn btn-white js-out" href="https://www.climat.com.au/contact-us/?utm_source=quickcompare&amp;utm_medium=referral">Get matched now</a>
+      <a class="btn btn-white js-out" href="https://www.econnex.com.au/bundle?utm_source=quickcompare&amp;utm_medium=referral">Start comparing</a>
     </div>
   </div>
 </section>
 
-<!-- ============ BRANDS ============ -->
+<!-- ============ WHAT YOU CAN COMPARE ============ -->
 <section style="padding-top:0">
   <div class="container">
     <div class="section-head reveal">
-      <h2>Compare leading brands</h2>
-      <p>Only quality, trusted brands make the cut, including the market leaders in cooling, heating and solar.</p>
+      <h2>What you can compare</h2>
+      <p>Start with the bill that bothers you most, then add the rest when you are ready.</p>
     </div>
-    <div class="brand-cards">
-      <div class="brand-card reveal">
-        <h3 class="brand-name">Hisense</h3>
-        <p>All Hisense products are built to last and designed to withstand the demands of modern lifestyles.</p>
-        <a class="js-out" href="https://www.climat.com.au/brands/?utm_source=quickcompare&amp;utm_medium=referral">Learn more <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <div class="cat-cards">
+      <div class="cat-card reveal">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5z"/></svg>
+        <h3>Electricity</h3>
+        <p>Compare rates, daily supply charges and discounts against your current plan.</p>
+        <a class="js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Compare <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="brand-card reveal" style="--d:.05s">
-        <h3 class="brand-name">Daikin</h3>
-        <p>One of Australia's largest Daikin dealer networks, with more reason to compare for all things air conditioning.</p>
-        <a class="js-out" href="https://www.climat.com.au/brands/?utm_source=quickcompare&amp;utm_medium=referral">Learn more <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="cat-card reveal" style="--d:.05s">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.2 3 5 4.8 5 9a5 5 0 0 1-10 0c0-2.6 1.5-3.9 2.4-6 1 1.6 1.9 2.4 3 2.8-.4-2.3-.7-4-.4-5.8z"/></svg>
+        <h3>Gas</h3>
+        <p>Compared alongside electricity, so you can check both bills in one go.</p>
+        <a class="js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Compare <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="brand-card reveal" style="--d:.1s">
-        <h3 class="brand-name">Mitsubishi Electric</h3>
-        <p>For a superior home, invest in energy-efficient superior technology with the Mitsubishi Electric range.</p>
-        <a class="js-out" href="https://www.climat.com.au/brands/?utm_source=quickcompare&amp;utm_medium=referral">Learn more <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="cat-card reveal" style="--d:.1s">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5 12a10.5 10.5 0 0 1 14 0"/><path d="M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1.2" fill="#003459" stroke="none"/></svg>
+        <h3>Internet</h3>
+        <p>NBN, 4G and 5G plans filtered by connection type and download speed.</p>
+        <a class="js-out" href="https://www.econnex.com.au/internet?utm_source=quickcompare&amp;utm_medium=referral">Compare <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="brand-card reveal" style="--d:.15s">
-        <h3 class="brand-name">Rinnai</h3>
-        <p>Rinnai's extensive range of innovative products is designed to bring a new level of comfort to your home.</p>
-        <a class="js-out" href="https://www.climat.com.au/brands/?utm_source=quickcompare&amp;utm_medium=referral">Learn more <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="cat-card reveal" style="--d:.15s">
+        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="#003459" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+        <h3>Mobile</h3>
+        <p>Add a mobile plan to your bundle, or compare it on its own.</p>
+        <a class="js-out" href="https://www.econnex.com.au/mobile?utm_source=quickcompare&amp;utm_medium=referral">Compare <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-    <div class="brands-cta reveal">
-      <a class="btn btn-primary js-out" href="https://www.climat.com.au/brands/?utm_source=quickcompare&amp;utm_medium=referral">See more brands</a>
+    <div class="cats-cta reveal">
+      <a class="btn btn-primary js-out" href="https://www.econnex.com.au/bundle?utm_source=quickcompare&amp;utm_medium=referral">Compare everything at once</a>
     </div>
   </div>
 </section>
@@ -420,22 +444,34 @@
 <!-- ============ CTA BAND ============ -->
 <div class="cta-band">
   <div class="container cta-inner">
-    <h2>Ready to compare? Get advice, options or a free quote.</h2>
+    <h2>Ready to see what you could be paying?</h2>
     <div class="btns">
-      <a class="btn btn-white js-out" href="https://www.climat.com.au/contact-us/?utm_source=quickcompare&amp;utm_medium=referral">Start comparing</a>
-      <a class="btn btn-outline-light js-out" href="https://www.climat.com.au/contact-us/?utm_source=quickcompare&amp;utm_medium=referral">Request a free quote</a>
+      <a class="btn btn-white js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Compare energy</a>
+      <a class="btn btn-outline-light js-out" href="https://www.econnex.com.au/bundle?utm_source=quickcompare&amp;utm_medium=referral">Compare a bundle</a>
     </div>
   </div>
 </div>
 
-<!-- ============ TESTIMONIAL ============ -->
-<section class="testi">
-  <div class="container testi-inner">
-    <div class="quote-mark reveal"><svg viewBox="0 0 24 24"><path d="M10.5 5C6.9 6.6 4.5 9.7 4.5 13.7c0 3 1.9 5.3 4.5 5.3 2.3 0 4-1.7 4-4 0-2.2-1.6-3.8-3.7-3.8-.4 0-.8 0-1 .1.4-2 2-3.9 4-4.9L10.5 5zm9 0c-3.6 1.6-6 4.7-6 8.7 0 3 1.9 5.3 4.5 5.3 2.3 0 4-1.7 4-4 0-2.2-1.6-3.8-3.7-3.8-.4 0-.8 0-1 .1.4-2 2-3.9 4-4.9L19.5 5z"/></svg></div>
-    <p class="quote-body reveal" style="--d:.05s">We had our last system installed through a Quick Compare partner in a previous home, and once again were very happy with our new system. Everything from the initial quote to the installation was seamless. Good old-fashioned service that seems hard to find. Highly recommended.</p>
-    <div class="quote-author reveal" style="--d:.1s">
-      <div class="avatar" aria-hidden="true">C</div>
-      <div><b>Chris</b><span>Verified customer, Adelaide SA</span></div>
+<!-- ============ COVERAGE ============ -->
+<section class="coverage">
+  <div class="container cov-grid">
+    <div class="reveal">
+      <h2 style="font-size:32px;font-weight:700;margin-bottom:10px">Where comparison is available</h2>
+      <p style="color:var(--muted);max-width:44ch">Availability depends on your address and the service you are comparing. Enter your address to see exactly what is available to you.</p>
+    </div>
+    <div class="cov-list reveal" style="--d:.08s">
+      <div class="cov-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+        <div><b>Electricity and gas</b><span>Available for eligible residential addresses in NSW, ACT, SA, VIC, and parts of QLD and TAS. In WA, gas only.</span></div>
+      </div>
+      <div class="cov-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+        <div><b>Internet</b><span>NBN, 4G and 5G plans, filtered by the connection type available at your address.</span></div>
+      </div>
+      <div class="cov-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+        <div><b>Bundles</b><span>Combine a single service or up to four, depending on what is available where you live.</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -449,33 +485,34 @@
           <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg></span>
           Quick Compare
         </div>
-        <p style="margin-bottom:14px;line-height:1.7">Quick Compare helps Australians find the right air conditioning, gas heating and solar solutions from trusted, quality providers.</p>
+        <p style="margin-bottom:14px;line-height:1.7">Quick Compare helps Australian households compare electricity, gas and internet plans, and bundle them together in one place.</p>
       </div>
       <div>
         <h3>Compare Services</h3>
-        <a class="js-out" href="https://www.climat.com.au/air-conditioning/?utm_source=quickcompare&amp;utm_medium=referral">Air Conditioning</a>
-        <a class="js-out" href="https://www.climat.com.au/heating/?utm_source=quickcompare&amp;utm_medium=referral">Gas Heating</a>
-        <a class="js-out" href="https://www.climat.com.au/solar/?utm_source=quickcompare&amp;utm_medium=referral">Solar</a>
+        <a class="js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Electricity</a>
+        <a class="js-out" href="https://www.econnex.com.au/energy?utm_source=quickcompare&amp;utm_medium=referral">Gas</a>
+        <a class="js-out" href="https://www.econnex.com.au/internet?utm_source=quickcompare&amp;utm_medium=referral">Internet</a>
+        <a class="js-out" href="https://www.econnex.com.au/bundle?utm_source=quickcompare&amp;utm_medium=referral">Bundles</a>
       </div>
       <div>
-        <h3>Popular Systems</h3>
-        <a class="js-out" href="https://www.climat.com.au/air-conditioning/ducted-reverse-cycle/?utm_source=quickcompare&amp;utm_medium=referral">Ducted Reverse Cycle</a>
-        <a class="js-out" href="https://www.climat.com.au/air-conditioning/split-systems/?utm_source=quickcompare&amp;utm_medium=referral">Split Systems</a>
-        <a class="js-out" href="https://www.climat.com.au/heating/ducted-gas-heating/?utm_source=quickcompare&amp;utm_medium=referral">Ducted Gas Heating</a>
-        <a class="js-out" href="https://www.climat.com.au/heating/gas-space-log-fires/?utm_source=quickcompare&amp;utm_medium=referral">Gas Space &amp; Log Fires</a>
+        <h3>More To Compare</h3>
+        <a class="js-out" href="https://www.econnex.com.au/mobile?utm_source=quickcompare&amp;utm_medium=referral">Mobile Plans</a>
+        <a class="js-out" href="https://www.econnex.com.au/solar?utm_source=quickcompare&amp;utm_medium=referral">Solar</a>
+        <a class="js-out" href="https://www.econnex.com.au/credit-cards?utm_source=quickcompare&amp;utm_medium=referral">Credit Cards</a>
+        <a class="js-out" href="https://www.econnex.com.au/health-insurance?utm_source=quickcompare&amp;utm_medium=referral">Health Insurance</a>
       </div>
       <div>
         <h3>Quick Links</h3>
         <a href="#services">Compare Now</a>
         <a href="#how">How It Works</a>
         <a href="#why">Why Quick Compare</a>
-        <a class="js-out" href="https://www.climat.com.au/brands/?utm_source=quickcompare&amp;utm_medium=referral">Brands</a>
+        <a class="js-out" href="https://www.econnex.com.au/how-it-works?utm_source=quickcompare&amp;utm_medium=referral">Provider Info</a>
       </div>
     </div>
   </div>
   <div class="disclaimer">
     <div class="container">
-      <strong>Disclosure:</strong> Quick Compare is an independent comparison service. When you click through to a provider's website and request a quote or make a purchase, we may receive a commission from that provider at no additional cost to you. This helps keep our comparison service free. Quotes, installations and services are provided by the partner provider, not by Quick Compare.
+      <strong>Disclosure:</strong> Quick Compare is an independent comparison service. When you click through to a provider's website and complete a comparison or sign up to a plan, we may receive a commission from that provider at no additional cost to you. This helps keep our comparison service free. Comparisons, plan availability and sign-ups are provided by the partner provider, not by Quick Compare. Availability depends on your address, and not all plans or providers in the market are compared.
     </div>
   </div>
   <div class="container foot-legal">
@@ -487,18 +524,19 @@
 <script>
   /* ===============================================================
      AFFILIATE TRACKING
-     UTM parameters are hardcoded in every outbound Climat link.
+     UTM parameters are hardcoded in every outbound Econnex link.
      TRACKING_PARAMS below is a safety net: it is appended only to
-     Climat links that are missing utm_source (e.g. links added
+     partner links that are missing utm_source (e.g. links added
      later without params). To add an affiliate ID to all links,
      set EXTRA_PARAMS, e.g. 'aff_id=YOUR_ID'.
      =============================================================== */
+  var PARTNER_DOMAIN = 'econnex.com.au';
   var TRACKING_PARAMS = 'utm_source=quickcompare&utm_medium=referral';
   var EXTRA_PARAMS = '';
 
   document.querySelectorAll('a.js-out').forEach(function(a){
     var href = a.getAttribute('href');
-    if(href && href.indexOf('climat.com.au') !== -1){
+    if(href && href.indexOf(PARTNER_DOMAIN) !== -1){
       if(href.indexOf('utm_source=') === -1){
         href += (href.indexOf('?') === -1 ? '?' : '&') + TRACKING_PARAMS;
       }
